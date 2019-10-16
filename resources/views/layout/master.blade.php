@@ -75,9 +75,9 @@
 
         <h1 class="my-4">Shop Name</h1>
         <div class="list-group">
-          <a href="/" class="list-group-item">Inicio</a>
-          <a href="catalog" class="list-group-item">Contacto</a>
-          <a href="catalog/show/{id}" class="list-group-item">Catalogo producto</a>
+          <a href="{{action ('MoviesController@home')}}" class="list-group-item">Inicio</a>
+          <a href="{{action ('MoviesController@catalog')}} " class="list-group-item">Contacto</a>
+          <a href="{{action ('MoviesController@productocatalog')}}" class="list-group-item">Catalogo producto</a>
         </div>
 
       </div>

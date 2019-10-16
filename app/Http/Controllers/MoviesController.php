@@ -10,10 +10,10 @@ class MoviesController extends Controller
 
     			return view('home');
     	}
-		public	function	postProfile(){
-
+		public	function catalog(){
+				return view('catalog/index');
 		}
-		public	function	anyLogin(){
-
+		public	function productocatalog(){
+				return	view('catalog/show');
 		} 
 }

@@ -11,9 +11,9 @@
 |
 */
 
-
-
 Route::get('/','MoviesController@home');
+Route::get('catalogo','MoviesController@catalog');
+Route::get('producto-catalogo','MoviesController@productocatalog');
 
 Route::get('login', function () {
     return 'login usuario';
@@ -21,16 +21,6 @@ Route::get('login', function () {
 
 Route::get('logouth', function () {
     return 'logouth usuario';
-});
-
-Route::get('catalog', function () {
-    return	view('catalog/index');
-});
-
-
-Route::get('catalog/show/{id}', function () {
-    //return 'Vista detalle	película{id}';
-    return	view('catalog/show');
 });
 
 Route::get('catalog/create', function () {
