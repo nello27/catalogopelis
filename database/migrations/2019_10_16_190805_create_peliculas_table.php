@@ -14,13 +14,13 @@ class CreatePeliculasTable extends Migration
     public function up()
     {
         Schema::create('peliculas', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nombrepeli',  100);
+            $table->bigIncrements('id');
+            $table->string('nombrepeli');
             $table->string('descripcion');
             $table->smallInteger('votos');  
             
-            $table->bigInteger('fkcategoria')->unsigned();
-            $table->foreign('fkcategoria')->references('id')->on('categoria');
+            $table->unsignedBigInteger('genero_id');
+            $table->foreign('genero_id')->references('id')->on('categoria')->onDelete('cascade');
 
             $table->timestamps();
         });
@@ -34,5 +34,6 @@ class CreatePeliculasTable extends Migration
     public function down()
     {
         Schema::dropIfExists('peliculas');
+        $table->dropForeign(['genero_id']);
     }
 }
