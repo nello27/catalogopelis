@@ -21,7 +21,7 @@ Route::get('login', function () {
     return 'login usuario';
 });
 
-Route::get('logouth	', function () {
+Route::get('logouth', function () {
     return 'logouth usuario';
 });
 
@@ -31,7 +31,8 @@ Route::get('catalog', function () {
 
 
 Route::get('catalog/show/{id}', function () {
-    return 'Vista	detalle	película{id}';
+    //return 'Vista detalle	película{id}';
+    return	view('show');
 });
 
 Route::get('catalog/create', function () {
