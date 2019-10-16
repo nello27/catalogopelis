@@ -13,10 +13,8 @@
 
 
 
-Route::get('/', function () {
-   return	view('home');
+Route::get('/','MoviesController@home');
 
-});
 Route::get('login', function () {
     return 'login usuario';
 });
@@ -26,13 +24,13 @@ Route::get('logouth', function () {
 });
 
 Route::get('catalog', function () {
-    return	view('index');
+    return	view('catalog/index');
 });
 
 
 Route::get('catalog/show/{id}', function () {
     //return 'Vista detalle	película{id}';
-    return	view('show');
+    return	view('catalog/show');
 });
 
 Route::get('catalog/create', function () {
