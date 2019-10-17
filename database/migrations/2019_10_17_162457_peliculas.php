@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePeliculasTable extends Migration
+class Peliculas extends Migration
 {
     /**
      * Run the migrations.
@@ -15,14 +15,14 @@ class CreatePeliculasTable extends Migration
     {
         Schema::create('peliculas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombrepeli');
-            $table->string('descripcion');
-            $table->smallInteger('votos');  
-            
-            $table->unsignedBigInteger('genero_id');
-            $table->foreign('genero_id')->references('id')->on('categoria')->onDelete('cascade');
-
+            $table->string('name');
+            $table->string('cast');
+            $table->string('direccion');
+            $table->string('duration');
             $table->timestamps();
+
+            $table->bigInteger('genero_id')->unsigned();
+            $table->foreign('genero_id')->references('id')->on('categoria');
         });
     }
 
@@ -34,6 +34,5 @@ class CreatePeliculasTable extends Migration
     public function down()
     {
         Schema::dropIfExists('peliculas');
-        $table->dropForeign(['genero_id']);
     }
 }
