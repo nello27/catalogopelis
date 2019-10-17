@@ -1,18 +1,25 @@
 @extends('layout.master')
 @section('content')
 
+  <div class="container">
     <div class="card card-register mx-auto mt-5">
       <div class="card-header">Register an Account</div>
       <div class="card-body">
-        <form action="{{'Usuariocontroller@store'}}" method="POST">
+        <form action="{{action('UsuarioController@store')}}" method="GET">
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-label-group">
                   <input type="text" id="name" class="form-control" placeholder="First name" required="required" autofocus="autofocus">
-                  <label for="firstName">Nombres</label>
+                  <label for="firstName">First name</label>
                 </div>
               </div>
+             <!-- <div class="col-md-6">
+                <div class="form-label-group">
+                  <input type="text" id="lastName" class="form-control" placeholder="Last name" required="required">
+                  <label for="lastName">Last name</label>
+                </div>
+              </div>-->
             </div>
           </div>
           <div class="form-group">
@@ -37,7 +44,7 @@
               </div>
             </div>
           </div>
-          <a class="btn btn-primary btn-block">Register</a>
+          <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
         <div class="text-center">
           <a class="d-block small mt-3" href="login.html">Login Page</a>
