@@ -15,6 +15,9 @@ Route::get('/','MoviesController@home');
 Route::get('catalogo','MoviesController@catalog');
 Route::get('producto-catalogo','MoviesController@productocatalog');
 
+
+Route::resource('usuario','UsuarioController');
+
 Route::get('login', function () {
     return 'login usuario';
 });
