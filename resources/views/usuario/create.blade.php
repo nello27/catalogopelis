@@ -5,7 +5,8 @@
     <div class="card card-register mx-auto mt-5">
       <div class="card-header">Register an Account</div>
       <div class="card-body">
-        <form action="{{action('UsuarioController@store')}}" method="GET">
+        <form method="GET" action="{{url('usuario')}}" >
+          <!--{!! csrf_field() !!}-->
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">

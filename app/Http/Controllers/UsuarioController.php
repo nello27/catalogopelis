@@ -18,13 +18,15 @@ class UsuarioController extends Controller
     	
     }
     public function store(Request $request){
-    	\App\User::create([
-    	'name'=>$request['name'],
-    	'email'=>$request['email'],
-    	'password'=> bcrypt($request['password']),
-    	]);
+    	
+    	$data = request()->all();
 
-    	return "usuario registrado";
+    \App\User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => bcrypt($request['password']),
+    ]);
+    
     	
     }
 

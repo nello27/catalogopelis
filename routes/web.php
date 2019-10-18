@@ -15,8 +15,8 @@ Route::get('/','MoviesController@home');
 Route::get('catalogo','MoviesController@catalog');
 Route::get('producto-catalogo','MoviesController@productocatalog');
 
-
-Route::resource('usuario','UsuarioController');
+Route::get('usuario/create','UsuarioController@create')->name('user.create');
+Route::get('usuario','UsuarioController@store');
 
 Route::get('login', function () {
     return 'login usuario';
