@@ -8,7 +8,8 @@ class UsuarioController extends Controller
 {
     public function index(){
 
-
+        $users = User::All();
+        return view('usuario.index',compact('users'));
 
     }
 

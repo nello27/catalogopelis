@@ -17,6 +17,7 @@ Route::get('producto-catalogo','MoviesController@productocatalog');
 
 Route::get('usuario/create','UsuarioController@create')->name('user.create');
 Route::get('usuario','UsuarioController@store');
+Route::get('usuario/index','Usuariocontroller@index');
 
 Route::get('login', function () {
     return 'login usuario';
