@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -18,16 +18,21 @@ class UsuarioController extends Controller
     	
     }
     public function store(Request $request){
-    	
-    	$data = request()->all();
+    
 
-    \App\User::create([
+    User::create([
             'name' => $request['name'],
             'email' => $request['email'],
-            'password' => bcrypt($request['password']),
+            'password' => $request['password'],
     ]);
-    
-    	
+        /*$request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        User::create($request->all());*/
+
     }
 
     public function show($id){
