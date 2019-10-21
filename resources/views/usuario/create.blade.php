@@ -13,19 +13,19 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                <input type="text" name="name" class="form-control" placeholder="name">
+                <input type="text" name="name" class="form-control" placeholder="name" required="required">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>email:</strong>
-                <input type="text" name="email" class="form-control" placeholder="email">
+                <input type="email" name="email" class="form-control" placeholder="email" required="required">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>password:</strong>
-                <input type="text" name="password" class="form-control" placeholder="password">
+                <input type="password" name="password" class="form-control" placeholder="password" required="required">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
