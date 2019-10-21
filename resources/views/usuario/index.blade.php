@@ -1,4 +1,16 @@
 @extends('layout.master')
+
+<?php $message=Session::get('message') ?>
+@if($message == 'store')
+@endif
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+	Usuario creado exitosamente
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
 @section('content')
 
  <div class="container">
@@ -20,7 +32,10 @@
 
     <td>{{$user->email}}</td>
 
-    <td></td>
+    <td>
+    	  		<a href="{{'edit'}}" class="btn btn-default"> Editar</a>
+   	</td>
+
   </tbody>
   @endforeach
 </table>

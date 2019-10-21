@@ -13,6 +13,14 @@ class UsuarioController extends Controller
 
     }
 
+    public function edit(){
+
+       // $user = User::find($id);
+
+        return view('usuario.edit');
+        
+    }
+
     public function create(){
 
     	return view('usuario.create');
@@ -26,6 +34,8 @@ class UsuarioController extends Controller
             'email' => $request['email'],
             'password' => bcrypt($request['password']),
     ]);
+
+    return redirect('usuario/index')->with('message','store');
         /*$request->validate([
             'name' => 'required',
             'email' => 'required',
