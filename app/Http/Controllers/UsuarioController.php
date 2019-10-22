@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
+//use App\Http\Request;
 
 class UsuarioController extends Controller
 {
@@ -13,11 +14,11 @@ class UsuarioController extends Controller
 
     }
 
-    public function edit(){
+    public function edit($id){
 
        // $user = User::find($id);
-
-        return view('usuario.edit');
+        $user = User::findOrFail($id);
+        return view('usuario.edit',compact('user'));
         
     }
 
@@ -25,7 +26,7 @@ class UsuarioController extends Controller
 
     	return view('usuario.create');
     	
-    }
+    }   
     public function store(Request $request){
     
 
@@ -44,6 +45,18 @@ class UsuarioController extends Controller
 
         User::create($request->all());*/
 
+    }
+
+    public function update($id)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+        ]);
+  
+        $usuarioedit->update($request->all());
+        return redirect()->route('usuario/index')
+                        ->with('success','Product updated successfully');
     }
 
     public function show($id){

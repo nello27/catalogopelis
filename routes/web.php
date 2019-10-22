@@ -18,7 +18,8 @@ Route::get('producto-catalogo','MoviesController@productocatalog');
 Route::get('usuario/create','UsuarioController@create')->name('user.create');
 Route::get('usuario','UsuarioController@store');
 Route::get('usuario/index','Usuariocontroller@index');
-Route::get('usuario/edit','Usuariocontroller@edit');
+Route::get('usuario/{id}/edit','Usuariocontroller@edit');
+Route::get('usuario/update','Usuariocontroller@update');
 
 Route::get('login', function () {
     return 'login usuario';

@@ -33,7 +33,7 @@
     <td>{{$user->email}}</td>
 
     <td>
-    	  		<a href="{{'edit'}}" class="btn btn-default"> Editar</a>
+    	  		<a href="{{$user->id.'/edit'}}" class="btn btn-default"> Editar</a>
    	</td>
 
   </tbody>
